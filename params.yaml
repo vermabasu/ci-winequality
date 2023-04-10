@@ -1,0 +1,21 @@
+base:
+  name: Winequality Classification
+  random_state: 42
+  
+
+path:
+  raw_dataset: data/raw/wine_quality.csv
+
+split_data:
+  X_train: data/processed/X_train.csv
+  X_test: data/processed/X_test.csv
+  y_train: data/processed/y_train.csv
+  y_test: data/processed/y_test.csv
+  split_ratio: 0.2
+
+estimators:
+  max_depth: 2
+
+reports:
+  scores: reports/scores.json
+  params: reports/params.json
