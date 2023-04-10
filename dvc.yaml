@@ -1,0 +1,24 @@
+stages:
+  Process_data:
+    cmd: python src/process_data.py --config=params.yaml
+    deps:
+    - data/raw
+    - src/process_data.py
+    - params.yaml
+    outs:
+    - data/processed
+
+
+  Train:
+    cmd: python src/train.py --config=params.yaml
+    deps:
+    - data/processed
+    - src/train.py
+    - params.yaml
+   metrics:
+    - reports/params.json:
+        cache: false
+    - reports/scores.json:
+        cache: false
+
+    
